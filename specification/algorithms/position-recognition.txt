@@ -1,0 +1,27 @@
+Dans GameController:
+    e.getX() -> x du click
+    e.getY() -> y du click
+    Point[][] points -> les centres (pt corrigés par Rémi) des formes, on fait
+                        comme si ils étaient correcte pour l'instant
+
+Déterminer le centre le plus proche:
+
+min_dist := +inf // la distance du click au centre le plus proche
+l := +inf        // la position en ligne du centre le plus proche
+c := +inf        // la position en colonne du centre le plus proche
+Pour i de 0 à points.len:
+    Pour j de 0 à points[i].len:
+        Point center = points[i][j]
+        Si center n'est pas null:
+            de = distance_euclidienne(center, Point(e.getX(), e.getY()))
+            Si de < min_dist:
+                min_dist = de
+                l = i
+                c = j
+Si min_dist <= getShapeSideLength(): // vérifier que le click est dans une tuile
+    tourner la tuile correspondante dans le model
+    Si la tuile a tourné:
+        blackout()
+        propagetElectricity()
+        mettre à jour la vue
+

@@ -1,0 +1,15 @@
+* LevelConfiguration
+  Représente la configuration gagnante d'un circuit à stocker dans un fichier.
+
+  Elle encapsule les données suivantes:
+  - hauteur, largeur du plateau (nouvel objet ?)
+  - la forme des ~Tile~ -> ~TileShape~
+  - le numéro du ~Level~
+  - les entrées représentant chaque tuile: une liste de ~TileEntry~
+
+  On peut créer un ~LevelConfiguration~ à partir d'un fichier de niveau ou à 
+  partir d'un objet ~Level~.
+
+* Level
+  Représente l'objet manipulé lors d'une partie de Energy. Il est produit à 
+  partir d'un ~LevelConfiguration~.

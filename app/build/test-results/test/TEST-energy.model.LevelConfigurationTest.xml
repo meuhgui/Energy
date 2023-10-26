@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.LevelConfigurationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.006">
+  <properties/>
+  <testcase name="CreatedLevelConfigHasGoodHeight()" classname="energy.model.LevelConfigurationTest" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

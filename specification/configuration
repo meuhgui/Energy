@@ -1,0 +1,12 @@
+Premier lancement de programme:
+    Création du dossier `.energy` dans le répertoir utilisateur (home)
+    Création des sous-répertoires `.energy/editable` et `.energy/playable`
+
+1. Déterminer le home de l'utilisateur: 
+    `System.getProperty(userHome)`
+2. Tester l'existance du répertoire `.energy` et ses sous-répertoires:
+    `Files.exists(path, options...)`
+
+On se donne une fonction qui teste si le path donné existe, si oui ne fait rien
+sinon le crée. On l'utilise pour tester l'existence de `.energy/` et ses 
+sous-repertoires.

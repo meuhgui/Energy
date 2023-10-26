@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.BorderTest" tests="25" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.056">
+  <properties/>
+  <testcase name="differentBordersAreNotEqual()" classname="energy.model.BorderTest" time="0.016"/>
+  <testcase name="squareBorderIsDisconnectedOnCreation()" classname="energy.model.BorderTest" time="0.002"/>
+  <testcase name="maxConnectedOfHexagonBorderIsSix()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="connectionOfListOfIndices()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="disconnectAfterConnectCorrespondingSideBecomesDisconnected()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="rotationOfFullyConnectedSquareBorder()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="rotationOfHexagonBorder()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="illegalIndexInConnectedSquareCreationThrowsException()" classname="energy.model.BorderTest" time="0.002"/>
+  <testcase name="levelFileRepIsAscendingConnectedSidesSeparetedByBlankSpace()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="connectInvalidSideAccordingToSquareShapeThrowsException()" classname="energy.model.BorderTest" time="0.002"/>
+  <testcase name="maxConnectedOfSquareBorderIsFour()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="connectTooMuchSidesToSquareThrowsOversizedBorderException()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="borderIsDisconnectedAfterDisconnectionOfEveryConnectedSide()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="illegalLengthInConnectedHexagonCreationThrowsException()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="rotationOfSquareBorder()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="hexagonFromConnectedSidesIsSameAsOldCreation()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="sameBordersAreEqual()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="hexagonBorderIsDisconnectedOnCreation()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="disconnectAfterSecondConnectBecomesConnectedToOneSide()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="illegalIndexInConnectedHexagonCreationThrowsException()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="disconnectAbsentSideOfBorderThrowsNotYetConnectedException()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="disconnectInvalidSideWhenSquareThrowsException()" classname="energy.model.BorderTest" time="0.0"/>
+  <testcase name="connectInvalidSideAccordingToHexagonShapeThrowsException()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="illegalLengthInConnectedSquareCreationThrowsException()" classname="energy.model.BorderTest" time="0.001"/>
+  <testcase name="levelFileRepresentationOfDisconnectedBorderIsEmptyString()" classname="energy.model.BorderTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

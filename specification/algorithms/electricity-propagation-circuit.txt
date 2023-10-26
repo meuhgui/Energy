@@ -1,0 +1,12 @@
+Dans Circuit.java:
+
+Stack<Tile> toExplore = toutes les sources du circuit
+
+Tant que toExplore n'est pas vide:
+    Tile current = retirer un element de toExplore
+    Allumer current
+    List<Tile> voisins = récuperer les tuiles voisines reliées et non allumées à
+                         partir de la position de current (il y a du boulot, ne
+                         pas oublier le cas particulier de la tuile contenant un
+                         hotspot)
+    Ajouter tous les voisins à toExplore

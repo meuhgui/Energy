@@ -1,0 +1,14 @@
+* Déroulement
+  Au lancement du programme, on propose deux choix de niveaux, éditables et non
+  éditables, qu'on stock dans des dossiers différents. On a Main.java avec le 
+  point d'entrée, qui crée un objet App héritant de JFrame dans lequel on mettra
+  l'ecran d'accueil (sous classe de JPanel)
+
+* GUI
+  On a 3 écrans:
+  - Accueil
+  - Jeu
+  - Edition
+
+  Jeu <-> Accueil <-> Edition
+

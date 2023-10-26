@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.PositionTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.019">
+  <properties/>
+  <testcase name="positionAndIntegerAreNotEqual()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="samePositionsAreEqual()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="getColumnOfPositionReturnsColumn()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="positionAndNullAreDifferent()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="originsAreEqual()" classname="energy.model.PositionTest" time="0.0"/>
+  <testcase name="negativeColumnCreationThrowsIllegalPositionException()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="samePositionInstancesAreEqual()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="getColumnOfOriginReturnsZero()" classname="energy.model.PositionTest" time="0.0"/>
+  <testcase name="negativeLineCreationThrowsIllegalPositionException()" classname="energy.model.PositionTest" time="0.002"/>
+  <testcase name="getLineOfOriginReturnsZero()" classname="energy.model.PositionTest" time="0.001"/>
+  <testcase name="getLineOfPositionReturnsLine()" classname="energy.model.PositionTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

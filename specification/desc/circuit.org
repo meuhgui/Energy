@@ -1,0 +1,80 @@
+* Circuit
+  Représente un circuit éléctrique (un graphe).
+  
+  Méthodes:
+  - public ArrayList<Tile> getTiles() ::
+       retourne la liste des ~Tile~ de ce ~Circuit~
+  - public ArrayList<Cable> getCables() ::
+       retourne la liste des ~Cable~ de ce ~Circuit~
+
+  Comment déterminer les dimensions d'un ~Circuit~ ?
+
+  En parcourant la liste des ~Tiles~, on détermine les valeurs maxRow et maxCol
+  correspondant à la plus grande valeur de ligne (resp. colonne) rencontrée.
+  Si les tuiles sont carrées -> (maxRow+1, maxCol+1).
+  Si les tuiles sont hexagonales il faut tester s'il existe une tuile en maxRow
+  à une colonne impaire. Si oui -> (maxRow+2, maxCol+1). 
+  Sinon -> (maxRow+1, maxCol+1)
+
+* Cable
+  Représente les cables qui relient les tuiles deux à deux.
+
+  Méthodes:
+  - public Tile getFirst() ::
+       retourne la première extrémité de ce ~Cable~
+  - public Tile getSecond() ::
+       retourne la deuxième extrémité de cet ~Cable~
+
+** WifiCable
+   Relie une ~Tile~ contenant un composant ~Hotspot~ à une autre contenant
+   aussi un composant ~Hotspot~
+
+* Component
+  Représente un composant éléctrique d'un circuit. Ce composant peut être:
+  - Source: ne peut pas tourner
+  - Lamp: peut tourner
+  - Hotspot: peut tourner
+  
+  Méthodes:
+  - public abstract boolean canRotate() ::
+       retourne /true/ si ce ~Component~ peut être tourné.
+
+* Position
+  Encapsule une position dans une matrice, où (i, j) correspond à la position 
+  (ligne, colonne). La plus petite position correspond à (0, 0), les positions
+  négatives ne sont pas autorisées et doivent lancées une exception à la 
+  création. Cette classe permet de se passer d'un plateau (ou une matrice, ce 
+  qui revient au même).
+
+  Tests:
+  - Créer une position sans spécifier la position donne l'origine (0, 0)
+  - Créer une position (i, j) donne une position (i, j)
+  - Créer une position négative lance une exception
+  - Récupérer la ligne d'une position (i, j) donne i
+  - Récupérer la colonne d'une position (i, j) donne j
+  - Positions are equal if at the same line and column
+
+* Tile
+  Représente une tuile. Une tuile peut être alimentée.
+   
+  Encapsule les données suivantes:
+  - forme de la tuile: ~TileShape~
+  - un ensemble de bords connectés, représenté par une liste d'entiers:
+    au plus 4 pour une tuile carrée, 6 pour une tuile héxagonale
+  - sa position dans le plan
+  - un composant: ~Composant~
+  - une liste de ses voisins dans le ~Graph~ sus-jacent
+
+    Méthodes (- héritées):
+    - public boolean isPowered() ::
+         retourne /true/ si cette ~Tile~ est allumée, i.e un de ses voisins est
+         allumé.
+         Une tuile contenant un composant ~Source~ est tout le temps allumée.
+    - public boolean canRotate() ::
+         retourne /false/ si le composant de cette ~Tile~ est un ~Source~, 
+         /true/ sinon.
+
+* TileShape
+  Enumération des formes d'une ~Tile~:
+  - *SQUARE*: une tuile à 4 bords
+  - *HEXAGON*: une tuile à 6 bords

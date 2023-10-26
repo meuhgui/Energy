@@ -1,0 +1,38 @@
+* Réunion <2023-02-14 Tue>
+  Etude du jeu "Energy", ébauche de modélisation des objets de base tels que:
+  - les sommets: sommet de base, source, lampe et wifi
+  - les arêtes
+  - les tuiles: carré et héxagonale
+  - les connecteurs (bords des tuiles)
+
+* Réunion <2023-02-18 Sat>
+  Conception objet:
+  - Niveau et éditeurs des niveaux
+  - Sommets, arêtes, graphe
+  - Tuile et côtés de tuile
+
+* Réunion 1 <2023-02-21 Tue >
+  Etude de la section edition de niveau du jeu Energy, nouvelle approche du jeu
+  en tant que "Graphe de tuiles" plutôt que liste de graphes à fusionner ou
+  séparer.
+
+* Réunion 2 <2023-02-21 Tue>
+  Conception de l'algorithme de dessin de tuiles
+
+* Réunion <2023-02-24 Fri>
+  Attribution des tâches et création des packages MVC
+** Sprint [100%] DEADLINE: <2023-03-01 Wed>
+*** DONE #1 Implement Edge class
+*** DONE #2 Implement Vertex class
+*** DONE #3 Implement Position class
+*** DONE #4 Implement TileShape class
+*** DONE #5 Implement Component class
+* Réunion <2023-03-07 Tue>
+  Points à aborder:
+  - Conception des niveaux et gui
+** Feedback sprint précédent
+   Temps suffisant et en accord. Tout est bon.
+** Sprint [0%] <2023-03-13 Mon>
+*** TODO Implement LevelConfiguration class
+*** TODO Implement Level class
+*** TODO Work on gui

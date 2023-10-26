@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.CableTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.011">
+  <properties/>
+  <testcase name="cableOnTilesAtSameLocationThrowsLoopException()" classname="energy.model.CableTest" time="0.002"/>
+  <testcase name="cableOnTilesWhenNotCabledYetMakesNeighbors()" classname="energy.model.CableTest" time="0.001"/>
+  <testcase name="cableOnSameTileThrowsLoopException()" classname="energy.model.CableTest" time="0.001"/>
+  <testcase name="cableOnTilesInNeighborhoodThrowsMultipleLinkException()" classname="energy.model.CableTest" time="0.002"/>
+  <testcase name="cablesAreEqualWhenTilesAreEqual()" classname="energy.model.CableTest" time="0.001"/>
+  <testcase name="cableOnTilesOfDifferentShapeThrowsIllegalTileShapeException()" classname="energy.model.CableTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

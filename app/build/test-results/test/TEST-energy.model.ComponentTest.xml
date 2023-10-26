@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.ComponentTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.01">
+  <properties/>
+  <testcase name="hotspotComponentCanRotate()" classname="energy.model.ComponentTest" time="0.001"/>
+  <testcase name="lampDiminutiveIsL()" classname="energy.model.ComponentTest" time="0.001"/>
+  <testcase name="hotspotDiminutiveIsW()" classname="energy.model.ComponentTest" time="0.0"/>
+  <testcase name="sourceDiminutiveIsS()" classname="energy.model.ComponentTest" time="0.0"/>
+  <testcase name="emptyDiminutiveIsDot()" classname="energy.model.ComponentTest" time="0.0"/>
+  <testcase name="sourceComponentCanNotRotate()" classname="energy.model.ComponentTest" time="0.0"/>
+  <testcase name="emptyComponentCanNotRotate()" classname="energy.model.ComponentTest" time="0.0"/>
+  <testcase name="lampComponentCanRotate()" classname="energy.model.ComponentTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

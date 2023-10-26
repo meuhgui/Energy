@@ -1,0 +1,27 @@
+package energy;
+
+import javax.swing.*;
+
+/**
+ * Entry class of the program.
+ */
+public class App {
+
+    private static final int MAX_WIDTH = 800;
+    private static final int MAX_HEIGHT = 600;
+
+    private static void createAndShowGUI() {
+        JFrame frame = new JFrame("Energy");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
+
+    /**
+     * Entry point.
+     * @param args the arguments of the program
+     */
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(App::createAndShowGUI);
+    }
+}

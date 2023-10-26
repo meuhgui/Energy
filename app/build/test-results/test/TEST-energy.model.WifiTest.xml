@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.WifiTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.008">
+  <properties/>
+  <testcase name="wifiBetweenDifferentShapesThrowsIllegalTileShapeException()" classname="energy.model.WifiTest" time="0.001"/>
+  <testcase name="wifiLinkBetweenNeighborsThrowsMultipleLinkException()" classname="energy.model.WifiTest" time="0.0"/>
+  <testcase name="wifiLinkBetweenTilesNotHotspotThrowsNotAHotspotException()" classname="energy.model.WifiTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

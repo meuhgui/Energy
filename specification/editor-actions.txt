@@ -1,0 +1,190 @@
+TODO [OK]: Modifier la création de nouveau niveau en demandant la forme des 
+tuiles et faire en sorte que le circuit ait une tuile vide de la bonne forme. 
+
+Actions de l'éditeur à regrouper dans des boutons ouvrant des dialogues.
+
+Actions de l'éditeur:
+    void addLine() -> ajoute une ligne de tuiles vides au circuit
+    void removeLine() -> retire la dernière ligne de tuiles (peu importe le
+        contenu des tuiles)
+    void addColumn() -> ajoute une colonne de tuiles vides au circuit
+    void removeColumn() -> retire la dernière colonne de tuiles (peu importe le
+        contenu des tuiles)
+(1) boolean setComponentOfTileAt(Component, Position) -> met le composant donné
+         à la tuile à la position donnée (si il y a une tuile, d'où le boolean
+          en type de retour)
+    boolean connectSideOfTileAt(Position, int) -> connecte le bord donné à la 
+        position donné (booléen en retour pour indiquer si le bord a bien été
+        connecté)
+    boolean disconnectSideOfTileAt(Position, int) -> même chose mais deconnecte
+    void emptyCircuit() -> vide l'intégralité des tuiles du circuit
+    boolean clearTileAt(Position) -> vide la tuile à la position donnée
+ 
+(1) Bouton `modifier composant`:
+Au clique, lance un dialog présentant les différents composants que l'on peut 
+placer (à la façon du choix de forme à la création de Circuit). Le retour de 
+ce dialog donne un `Component`, affecté à une variable `componentToAdd` de 
+CircuitView et affecte l'action d'édition `EditionAction.MODIFY_COMPONENT` à 
+l'attribut de EditorController (comment ? en maintenant une référence vers le 
+contrôleur ?).
+
+On donne à `LevelView` un attribut `EditorController editorController`. Plus 
+besoin de EditorAction. 
+Un clique sur le CircuitView => demande de changement du composant d'une tuile.
+
+================================================================================
+
+addOrRemoveLine(): void [OK]
+    Determiner la forme des tuiles du circuit
+    Pour i de 0 à circuit.largeur:
+        Si les tuiles sont hexagonales et i impair:
+            Si flag est true:
+                Ajouter une tuile vide en (circuit.hauteur, i)
+            Sinon:
+                Supprimer tuile en (circuit.hauteur - 1, i)
+        Sinon:
+            Si flag est true:
+                Ajouter une tuile vide en (circuit.hauteur + 1, i)
+            Sinon:
+                Supprimer tuile en (circuit.hauteur, i)
+
+addLine(): void [OK]
+    addOrRemoveLine(true)
+
+removeLine(): void [OK]
+    addOrRemoveLine(false)
+
+------------------------------
+
+addOrRemoveColumn(boolean): void
+    Determiner la forme des tuiles du circuit
+    Pour i de 0 à circuit.hauteur:
+        Si les tuiles sont hexagonales et i = circuit.hauteur - 1:
+            ne rien faire
+        Sinon:
+            Si flag est true:
+                Ajouter une tuile vide en (i, circuit.largeur + 1)
+            Sinon
+                Supprimer une tuile en (i, circuit.largeur)
+
+addColumn(): void
+    addOrRemoveColumn(true)
+
+removeColumn(): void
+    addOrRemoveColumn(false)
+
+------------------------------
+
+clearTileAt(Position p): boolean
+    Recupérer la tuile t en position p
+    Si t = null:
+        retourner false
+    Sinon:
+        Changer le component de t à EMPTY // regrouper ces deux bouts 
+        Déconnecter tous les bord de t    // en Tile::clear()
+        return true
+
+Dans Level:
+clearTileAt(Position p): boolean
+    retourner circuit.clearTileAt(p)
+
+Dans Circuit:
+clearTileAt(Position p): boolean
+    Pour chaque tuile de ce circuit:
+        Si tuile.position = p:
+            tuile.clear()
+            retourner true
+    retourner false
+
+Dans Tile:
+clear(): void
+    Changer le component à Component.EMPTY
+    border.clear()
+
+Dans Border:
+clear(): void
+    Pour i de 0 à sides.length:
+        sides[i] = false
+
+------------------------------
+
+emptyCircuit(): void
+    Pour chaque position de tuile du circuit : 
+      Appeler clearTileAt(position)
+      
+Plus simple de simplement parcourir toute les tuiles du circuit et appeler 
+Tile::clear()
+
+Dans Level:
+emptyCircuit(): void
+    circuit.clear()
+
+Dans Circuit:
+clear(): void
+    Pour chaque tuile dans ce circuit:
+        tuile.clear()
+
+------------------------------
+
+disconnectSideOfTileAt(Position, int): boolean
+    Récupérer la tuile à la position donnée
+    Si: null -> return false
+    Sinon:
+    Appeler disconnect(side_to_disconnect) sur le border de la tuile
+    return false
+
+Dans Level:
+disconnectSideOfTileAt(Position, int): boolean
+    retourner circuit.disconnectSideOfTileAt(position, i)
+
+Dans Circuit:
+disconnectSideOfTileAt(Position, int): boolean
+    Pour chaque tuile dans ce circuit:
+        Si tuile.position = position:
+            retourner tuile.disconnectSideAt(i)
+    retourner false
+
+Dans Tile:
+disconnectSideAt(int): boolean
+    return border.disconnect(i) // en supposant que disconnect retourne boolean
+
+================================================================================
+
+Fonctions à implémenter:
+
+    [IMPLEMENTÉ]
+    - Tile::disconnectSideAt(int): boolean
+    - Circuit::disconnectSideOfTileAt(Position, int): boolean
+    - Level::disconnectSideOfTileAt(Position, int): boolean override
+    - EditableLevel::disconnectSideOfTileAt(Position, int): boolean
+    (je ne mets pas dans EditorController etant donné qu'on ne sait pas encore)
+
+    [IMPLEMENTÉ]
+    - Border::clear(): void
+    - Tile::clear(): void
+    - Circuit::clear(): void
+    - Level::clearCircuit(): void override
+    - EditableLevel::clearCircuit(): void
+    - EditorController::clearCircuit(): void
+
+    [IMPLEMENTÉ]
+    Dépend du groupe précédent 
+    - Circuit::clearTileAt(Position): boolean
+    - Level::clearTileAt(Position): boolean
+    - EditableLevel::clearTileAt(Position): boolean
+    (je ne mets pas dans EditorController etant donné qu'on ne sait pas encore)    
+
+    - Circuit::addOrRemoveColumn(boolean): void
+    - Circuit::addColumn(): void
+    - Circuit::removeColumn(): void
+    - Level::removeColumn(): void override
+    - EditableLevel::removeColumn(): void
+    - EditorController::removeColumn(): void
+
+    - Circuit::addOrRemoveLine(boolean): void [OK]
+    - Circuit::addLine(): void [OK]
+    - Circuit::removeLine(): void [OK]
+    - Level::removeLine(): void override [OK]
+    - Level::addLine(): void override [OK]
+    - EditableLevel::removeLine(): void [OK]
+    - EditorController::removeLine(): void [OK]

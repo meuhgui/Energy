@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="energy.model.TileTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2023-04-02T16:51:47" hostname="manj" time="0.072">
+  <properties/>
+  <testcase name="isEmtpyOnEmptyTileReturnsTrue()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="removeNeighborWhenPresent()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tilesAtSamePositionAndSameComponentAreEqual()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="shapeOfSquaredTileWithFrabricIsSquare()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="tileIsPoweredWhenNeighborIsPowered()" classname="energy.model.TileTest" time="0.002"/>
+  <testcase name="removeNeighborWhenPresentAlsoRemovesInNeighbor()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileIsAtGivenPosition()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileWithComponentIsNotEmpty()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="isNeighborReturnsTrueWhenIsNeighbor()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="addNeighborThrowsExceptionIfNeighborIsAtSamePosition()" classname="energy.model.TileTest" time="0.005"/>
+  <testcase name="tileWithLampCanRotate()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="shapeOfSquaredTileIsSquare()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="removeNeighborThrowsNoSuchElementExceptionIfAbsent()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileAtOriginIsAtOrigin()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="isNeighborReturnsFalseWhenNeighborsIsEmpty()" classname="energy.model.TileTest" time="0.005"/>
+  <testcase name="createSquaredSourceTileWithNoConnectedBorderAtOrigin()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="compatibleNeighborIsAdded()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileWithComponentHasCorrectLevelFileRep()" classname="energy.model.TileTest" time="0.003"/>
+  <testcase name="tileIsPoweredWhenHoldsSourceComponent()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="compatibleNeighborIsAddedInNeighborsToo()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileWithOneConnectedBorderIsNotEmpty()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileHasGivenBorder()" classname="energy.model.TileTest" time="0.002"/>
+  <testcase name="shapeOfHexagonalTileIsHexagon()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="tileWithHotspotCanRotate()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="emptyTileLevelFileRepIsADot()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="shapeOfHexagonalTileWithFrabricIsHexagon()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="addNeighborThrowsExceptionIfNeighborHasDifferentTileShape()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileIsNotPoweredWhenNotASourceAndNeighborsAreNotPowered()" classname="energy.model.TileTest" time="0.001"/>
+  <testcase name="tileHasGivenComponent()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="anEmptyTileHasNoBorder()" classname="energy.model.TileTest" time="0.007"/>
+  <testcase name="tileLevelFileRepHasSameBorder()" classname="energy.model.TileTest" time="0.0"/>
+  <testcase name="tileWithSourceCanNotRotate()" classname="energy.model.TileTest" time="0.0"/>
+  <system-out><![CDATA[W 2 4 5
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
